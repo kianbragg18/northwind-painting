@@ -34,7 +34,7 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px)
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--b);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
-.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+.wrap{width:100%;max-width:1680px;margin:0 auto;padding:0 clamp(24px,4vw,72px)}
 h1,h2,h3{font-family:var(--d);font-weight:800;letter-spacing:-.02em;line-height:1.03;margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:4px;font:700 17px var(--b);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background-color .15s,color .15s}
 .btn-a{background:var(--accent);color:var(--on-accent)}
