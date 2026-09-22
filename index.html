@@ -388,6 +388,16 @@ footer a{color:#fff}
     document.getElementById('doneText').textContent='Thanks, '+name.split(' ')[0]+'. This is a demo site, so nothing was actually sent and nobody will call you. On a real site this form would email the business.';
     form.hidden=true;done.hidden=false;done.focus();
   });
+  // Before/after sliders: wire each range input to its container's --pos.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ba]'),function(box){
+    var r=box.querySelector('input[type=range]');
+    if(!r)return;
+    function pos(){box.style.setProperty('--pos',r.value+'%')}
+    r.addEventListener('input',pos);
+    r.addEventListener('change',pos);
+    pos();
+  });
+
   document.getElementById('again').addEventListener('click',function(){
     form.reset();['jobErr','nameErr','phoneErr'].forEach(function(x){e(x,false)});
     done.hidden=true;form.hidden=false;document.getElementById('j1').focus();
